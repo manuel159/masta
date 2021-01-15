@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="/static/js/bootstrap.min.js"></script>
+    <title>Editar</title>
+</head>
+
+<!--   The idea is to use a header to override the method. The following example 
+    is to override POST method to create PUT and DELETE method.    -->
+<!--<form action="/api/product/{{_id}}" method="PUT">-->
+<form action="/api/product/{{products._id}}?_method=PUT" method="post">
+    <input type="hidden" name="_method" value="PUT">
+
+    ID <input type="text" disabled value="{{products._id}}" name="_id"> <br>
+    Nombre <input type="text" value="{{products.name}}" name="name"><br>
+    Price <input type="number" value="{{products.price}}" name="price"><br>
+    Category <input type="text" value="{{products.category}}" name="category"><br>
+    Description <input type="text" value="{{products.description}}" name="description"><br>
+    Picture <input type="text" value="{{products.picture}}" name="picture"><br>
+    <button class="btn btn-primary" type="submit">GUARDAR</button>
+</form>
